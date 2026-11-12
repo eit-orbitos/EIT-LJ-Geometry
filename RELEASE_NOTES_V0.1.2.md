@@ -35,4 +35,4 @@ This version addresses the five required corrections of the independent Kimi AI 
 39 tests: 39 passed (correction 5 completed; its former strict expected failure now passes). The original nine tests are unchanged and pass.
 
 ## Status
-Not frozen, not released, no DOI. No experimental validation of EIT/H-space or new physics is claimed; 0.9 and 1.3 remain heuristic.
+Released as GitHub v0.1.2 and archived on Zenodo. Version DOI: 10.5281/zenodo.24149914; concept DOI: 10.5281/zenodo.24149913. No experimental validation of EIT/H-space or new physics is claimed; 0.9 and 1.3 remain heuristic.
