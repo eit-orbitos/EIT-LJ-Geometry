@@ -8,6 +8,14 @@ authors:
 version: 0.1.2
 date-released: 2026-11-11
 repository-code: "https://github.com/eit-orbitos/EIT-LJ-Geometry"
+doi: 10.5281/zenodo.24149914
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24149914
+    description: "Version-specific DOI for v0.1.2 (Zenodo)"
+  - type: doi
+    value: 10.5281/zenodo.24149913
+    description: "Concept DOI for all versions (resolves to latest)"
 abstract: >-
   Reproducible computational research package for geometry-dependent equilibrium
   radii in a generalized inverse-power repulsive/stabilizing force model, including

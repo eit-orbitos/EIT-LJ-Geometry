@@ -25,3 +25,10 @@ Do not publish claims such as “new gravity proven,” “EIT experimentally va
 
 - Status: **publication candidate — not final, not released**. Requires a short differential review of v0.1.1 → v0.1.2 before any GitHub release or Zenodo deposit.
 - DONE (2026-11-11): `CITATION.cff` `repository-code` set to the author-supplied URL `https://github.com/eit-orbitos/EIT-LJ-Geometry`; `MANIFEST.sha256` regenerated; the former strict-xfail marker on `test_citation_repository_url_completed` removed. Uploading to GitHub is not authorized by this change.
+
+## Release record (2026-11-11 local / 2026-11-12 UTC)
+
+- Differential review v0.1.1 → v0.1.2: PASS for publication candidate (AI review, not peer review; it did not cover binaries, MANIFEST, or the new regression-test contents).
+- Repository made public by the author; GitHub release `v0.1.2 — publication candidate` published by the author on tag `v0.1.2` → commit `fc98ea3`.
+- Zenodo archived the release: version DOI 10.5281/zenodo.24149914; concept DOI 10.5281/zenodo.24149913. Zenodo shows the publication date as 2026-11-12 (UTC); `CITATION.cff` keeps the author-selected `date-released: 2026-11-11`.
+- Status remains **publication candidate**: not frozen, no scientific or experimental validation claimed. Zenodo license metadata should be checked by the author against the mixed licensing.

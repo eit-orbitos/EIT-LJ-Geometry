@@ -59,6 +59,13 @@ This is an internal mathematical/computational model. It does **not** experiment
 
 The earlier exploratory label **P2-SMOOTH a=b=2** belongs to a separate energy-partition sandbox and is **not part of this geometry-equilibrium release**.
 
+## Citation and DOI
+
+- Version DOI (v0.1.2): [10.5281/zenodo.24149914](https://doi.org/10.5281/zenodo.24149914)
+- Concept DOI (all versions, resolves to latest): [10.5281/zenodo.24149913](https://doi.org/10.5281/zenodo.24149913)
+
+The Zenodo archive was created from GitHub release tag `v0.1.2` (commit `fc98ea3`). The DOI metadata was added afterwards in a separate commit on `main`; the tagged `v0.1.2` content is unchanged. See `CITATION.cff`.
+
 ## Licensing
 
 - Code: **PolyForm Noncommercial 1.0.0**

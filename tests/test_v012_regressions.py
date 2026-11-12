@@ -126,3 +126,9 @@ def test_citation_repository_url_completed():
     cff = (ROOT / 'CITATION.cff').read_text()
     assert 'REPLACE_WITH_GITHUB_URL' not in cff
     assert 'repository-code: "https://github.com/eit-orbitos/EIT-LJ-Geometry"' in cff
+
+
+def test_citation_zenodo_doi_recorded():
+    cff = (ROOT / 'CITATION.cff').read_text()
+    assert 'doi: 10.5281/zenodo.24149914' in cff
+    assert '10.5281/zenodo.24149913' in cff
