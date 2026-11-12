@@ -1,0 +1,21 @@
+{
+  "title": "Geometry-Dependent Equilibria in Generalized Lennard-Jones-Type Power-Law Systems",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "A review-corrected reproducible theoretical and computational study of geometry-dependent constrained radial equilibria in a generalized inverse-power force model. v0.1.2 (publication candidate) scopes the analytic large-N zeta limit to n>m>2, scan-qualifies the N=4 polygon minimum, fixes source-index propagation, and removes build artifacts; v0.1.1 added an analytic large-N zeta limit, a co-spherical geometry bound, full-vector residual checks for cuboids, an exact normalization-rescaling identity, deterministic builders for all data/figures, and clarified provenance. Mixed licensing: code under PolyForm Noncommercial 1.0.0; manuscript/figures/documentation under CC BY-NC-SA 4.0.",
+  "creators": [
+    {
+      "name": "Mladenovski, Toni"
+    }
+  ],
+  "keywords": [
+    "Lennard-Jones",
+    "inverse-power potential",
+    "geometry-dependent equilibrium",
+    "computational mathematics",
+    "reproducibility"
+  ],
+  "access_right": "open",
+  "version": "0.1.2",
+  "notes": "Mixed-license archive. Select/describe licenses explicitly during Zenodo deposition; do not imply a single license applies to all files."
+}

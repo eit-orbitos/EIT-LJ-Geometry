@@ -1,0 +1,85 @@
+{
+  "version": "0.1.2",
+  "polygon": {
+    "R_EQ_reference": 1.122462048309373,
+    "N_min": 4,
+    "R_EQ_min": 1.1126198391757889,
+    "R_EQ_N1000": 1.119295764223787,
+    "R_EQ_largeN_closed_form": 1.1192958790728955,
+    "largeN_formula": "[(A/B)*zeta(n-1)/zeta(m-1)]^(1/(n-m))",
+    "interpretation": "nearest-neighbor-rescaled local infinite-chain limit with curvature-weighted radial projections; valid for n>m>2",
+    "N_min_scope": "unique minimum within the computed N=3..1000 scan (not a global theorem)"
+  },
+  "cuboid": {
+    "delta_min_R_nearest": 0.8513399225207845,
+    "R_EQ_min_nearest": 1.047252079231908,
+    "radial_residual_prefactor24": 5.626344128552554e-15,
+    "tangential_residual_prefactor24": 9.243709344129282,
+    "normalization_identity": "R_fixed = R_nearest * d_fixed / d_nn",
+    "normalization_identity_max_abs_error": 1.7763568394002505e-15
+  },
+  "bounds": {
+    "theorem": "For co-spherical configurations under nearest-neighbor normalization: R_ref/rho_max <= R_G <= R_ref",
+    "cube": {
+      "rho_max": 1.7320508075688772,
+      "lower": 0.6480537657465553,
+      "actual": 1.1015673696491965,
+      "upper": 1.122462048309373,
+      "satisfies": true
+    },
+    "cuboid_at_radial_min": {
+      "rho_max": 1.938932521497958,
+      "lower": 0.5789072264578833,
+      "actual": 1.047252079231908,
+      "upper": 1.122462048309373,
+      "satisfies": true
+    }
+  },
+  "platonic": [
+    {
+      "geometry": "tetrahedron",
+      "N": 4,
+      "G13": 2.449489742783178,
+      "G7": 2.449489742783178,
+      "Q": 1.0,
+      "R_EQ": 1.122462048309373
+    },
+    {
+      "geometry": "cube",
+      "N": 8,
+      "G13": 1.7599060771150419,
+      "G7": 1.969940501818307,
+      "Q": 0.8933803206191264,
+      "R_EQ": 1.1015673696491965
+    },
+    {
+      "geometry": "octahedron",
+      "N": 6,
+      "G13": 2.8394756682022297,
+      "G7": 2.9168154723945086,
+      "Q": 0.9734848484848484,
+      "R_EQ": 1.1174459659489158
+    },
+    {
+      "geometry": "icosahedron",
+      "N": 12,
+      "G13": 2.6370535498418204,
+      "G7": 2.786246096313872,
+      "Q": 0.9464539235534759,
+      "R_EQ": 1.1122137126839893
+    },
+    {
+      "geometry": "dodecahedron",
+      "N": 20,
+      "G13": 1.0772309262981634,
+      "G7": 1.2087510541221458,
+      "Q": 0.89119337073133,
+      "R_EQ": 1.1011174803419859
+    }
+  ],
+  "boundary": {
+    "heuristic_low": 0.9,
+    "heuristic_high": 1.3,
+    "status": "heuristic_not_derived"
+  }
+}

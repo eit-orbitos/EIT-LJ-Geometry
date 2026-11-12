@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "review_target": "EIT_LJ_Geometry_Research_V0.1.1.zip",
+  "review_type": "independent mathematical, computational, packaging, and provenance audit",
+  "verdict": "PASS WITH CORRECTIONS",
+  "publication_readiness": "READY WITH MINOR EDITS",
+  "ready_to_upload_unchanged": false,
+  "classification_legend": {
+    "A": "analytically verified",
+    "B": "numerically reproduced",
+    "C": "trial/model parameter",
+    "D": "heuristic",
+    "E": "speculative",
+    "F": "incorrect or unsupported"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "For F(r)=A/r^n-B/r^m with A,B>0 and n>m>0, the nonzero two-body root is R_EQ=(A/B)^(1/(n-m)).",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "Direct algebra; paper/manuscript.tex lines 41-50; src/eit_geometry.py:equilibrium_radius."
+    },
+    {
+      "id": "C02",
+      "claim": "The normalized LJ potential gives force 24(2/r^13-1/r^7), equilibrium 2^(1/6), and curvature transition (26/7)^(1/6).",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "Independent differentiation; src/eit_geometry.py:lj_force and lj_curvature; independent value 1.2444550602598078860 for the curvature transition."
+    },
+    {
+      "id": "C03",
+      "claim": "A/B=2, n=13, m=7 is an empirically determined parameter set for the geometry model.",
+      "class": "C",
+      "verdict": "REJECTED_AS_EMPIRICAL_CLAIM; correctly presented as a reference/model choice",
+      "evidence": "paper/manuscript.tex lines 48-56 explicitly declares a reference choice, not an empirical determination."
+    },
+    {
+      "id": "C04",
+      "claim": "Within the declared projected-force model, R_EQ(G)=[(A/B)G(n)/G(m)]^(1/(n-m)).",
+      "class": "A",
+      "verdict": "VERIFIED_WITH_MODEL_AND_POSITIVITY_ASSUMPTIONS",
+      "evidence": "Set the projected radial force to zero; src/eit_geometry.py:geometry_factor and geometry_equilibrium. Positive G(n),G(m) are required and enforced by geometry_equilibrium."
+    },
+    {
+      "id": "C05",
+      "claim": "Equal-distance regular simplices have Q=1 under nearest-neighbor normalization.",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "All normalized distances and all weights are p-independent; independently checked for triangle and tetrahedron and in tests/test_core.py."
+    },
+    {
+      "id": "C06",
+      "claim": "For (A/B,n,m)=(2,13,7), the computed regular-polygon scan N=3,...,1000 has a unique minimum at N=4.",
+      "class": "B",
+      "verdict": "REPRODUCED_FOR_THE_STATED_SCAN",
+      "evidence": "data/polygon_spectrum_N3_1000.csv; R_EQ(4)=1.1126198391757888942; R_EQ(5)=1.1129374683599158358; all scanned differences after N=4 are positive. This is not a proof for every N>=3."
+    },
+    {
+      "id": "C07",
+      "claim": "The N=4 minimum is an analytically established global minimum for every regular polygon N>=3.",
+      "class": "F",
+      "verdict": "UNSUPPORTED_AS_A_GLOBAL_THEOREM",
+      "evidence": "The package supplies a finite scan and a large-N limit, not a global monotonicity/minimum proof. Abstract and conclusion wording should be restricted to N=3,...,1000."
+    },
+    {
+      "id": "C08",
+      "claim": "G_N(p)=sin^p(pi/N) sum_{k=1}^{N-1} sin^(1-p)(pi k/N).",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "Independent chord-distance and radial-projection derivation; agrees with high-precision direct Cartesian calculations."
+    },
+    {
+      "id": "C09",
+      "claim": "For the reference exponents, R_inf=[2 zeta(12)/zeta(6)]^(1/6)=1.119295879072895603668...",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "Independent asymptotic derivation and 80-digit evaluation. R_EQ(1000)=1.1192957642238523581 by high-precision sine summation, consistent with the limit."
+    },
+    {
+      "id": "C10",
+      "claim": "The general zeta large-N formula is valid under only n>m>0.",
+      "class": "F",
+      "verdict": "INCORRECT_DOMAIN_AS_PRINTED; valid for n>m>2",
+      "evidence": "G_N(p)~(2*pi/N)zeta(p-1) requires p>2. src/eit_geometry.py:polygon_limit lacks a guard: (n,m)=(4,2) returns 0.40870126941652 using a truncated harmonic sum, and (4,1) returns a complex value."
+    },
+    {
+      "id": "C11",
+      "claim": "Under nearest-neighbor rescaling, the large-N polygon has a local infinite-chain interpretation rather than a fixed-radius continuum-circle force integral.",
+      "class": "A",
+      "verdict": "VERIFIED_WITH_CURVATURE_WEIGHTING_QUALIFICATION",
+      "evidence": "With nearest spacing fixed, the circumradius grows like N/(2*pi), local chord distances approach integer chain spacings, and radial projections for fixed k vanish like pi*k/N. Thus G_N(p) vanishes like 1/N and the zeta(p-1) coefficient is curvature-weighted; this is not the conventional unit-projection chain sum 2*zeta(p)."
+    },
+    {
+      "id": "C12",
+      "claim": "For co-spherical configurations about the centroid, nearest-neighbor normalization, nonnegative radial weights, and n>m>0, R_ref/rho_max<=R_EQ(G)<=R_ref.",
+      "class": "A",
+      "verdict": "VERIFIED",
+      "evidence": "From 1<=rho_j<=rho_max, rho_max^(-(n-m))rho_j^(-m)<=rho_j^(-n)<=rho_j^(-m); sum with nonnegative weights and raise to 1/(n-m). src/eit_geometry.py:spherical_nearest_bounds."
+    },
+    {
+      "id": "C13",
+      "claim": "R=1.3 is unreachable within the reference co-spherical nearest-neighbor class.",
+      "class": "A",
+      "verdict": "VERIFIED_ONLY_WITHIN_THE_STATED_CLASS",
+      "evidence": "R_EQ(G)<=R_ref=2^(1/6)=1.1224620483093729814<1.3."
+    },
+    {
+      "id": "C14",
+      "claim": "The co-spherical bound excludes R=1.3 for every normalization, geometry, and parameter choice.",
+      "class": "F",
+      "verdict": "UNSUPPORTED_OVERGENERALIZATION; not asserted by the corrected manuscript",
+      "evidence": "The theorem assumes nearest-neighbor normalization, co-sphericity about the centroid, nonnegative weights, and the reference A/B for the numerical 1.3 comparison."
+    },
+    {
+      "id": "C15",
+      "claim": "For fixed geometry and source, R_fixed=R_near*d_fixed/d_nn.",
+      "class": "A",
+      "verdict": "VERIFIED_AND_NUMERICALLY_REPRODUCED",
+      "evidence": "G_fixed(p)=(d_fixed/d_nn)^p G_near(p); src/eit_geometry.py:normalization_rescale_identity. Maximum submitted float64 error over 601 cuboids is 1.7763568394002505e-15."
+    },
+    {
+      "id": "C16",
+      "claim": "The 409-point cuboid scan has its sampled nearest-unit radial minimum near delta=0.8513399225207845 and R=1.047252079231908.",
+      "class": "B",
+      "verdict": "REPRODUCED",
+      "evidence": "data/cuboid_deformation_delta_0p2_5.csv and data/summary_results.json. Independent closed-shell cuboid calculation gives R=1.0472520792319080457. A separate continuous optimization gives delta=0.8517671273107278, R=1.0472517021752092, consistent with the manuscript's 'near' wording for a sampled minimum."
+    },
+    {
+      "id": "C17",
+      "claim": "At the sampled cuboid radial minimum with prefactor 24, the radial residual is zero to numerical precision and the tangential norm is approximately 9.243709344129282.",
+      "class": "B",
+      "verdict": "REPRODUCED_INDEPENDENTLY",
+      "evidence": "Independent 80-digit direct vector sum: net=(-3.3710763464328979,-3.3710763464328979,7.9194602702320633), radial residual approximately 0, tangential norm 9.2437093441292741797. src/eit_geometry.py:vector_force_residual."
+    },
+    {
+      "id": "C18",
+      "claim": "The deformed cuboid's radial root at the reported minimum is a full vector equilibrium.",
+      "class": "F",
+      "verdict": "FALSE; corrected interpretation is constrained radial equilibrium",
+      "evidence": "C17 gives a nonzero tangential residual. The corrected text in paper/manuscript.tex lines 194-223 is accurate."
+    },
+    {
+      "id": "C19",
+      "claim": "The endpoints 0.9 and 1.3 are derived constants of the geometry model.",
+      "class": "D",
+      "verdict": "NOT_DERIVED; correctly labeled heuristic operational thresholds",
+      "evidence": "paper/manuscript.tex:Boundary Audit; data/summary_results.json:boundary.status='heuristic_not_derived'."
+    },
+    {
+      "id": "C20",
+      "claim": "All committed CSV and JSON outputs are reproducible from the supplied builders.",
+      "class": "B",
+      "verdict": "REPRODUCED_BYTE_FOR_BYTE",
+      "evidence": "After deleting generated outputs, scripts/build_all.py regenerated all four CSV files and summary_results.json byte-identically. Both standalone experiment scripts also reproduced their documented outputs."
+    },
+    {
+      "id": "C21",
+      "claim": "All seven committed PNG figures are reproducible from scripts/build_all.py.",
+      "class": "B",
+      "verdict": "REPRODUCED_PIXEL_FOR_PIXEL; not byte-identical across Matplotlib versions",
+      "evidence": "All RGBA arrays and dimensions matched exactly. PNG hashes differed because submitted metadata says Matplotlib 3.10.8 while the review environment used 3.10.3; requirements.txt is not pinned."
+    },
+    {
+      "id": "C22",
+      "claim": "Build caches and compiled Python files are excluded from the release archive.",
+      "class": "F",
+      "verdict": "FALSE_FOR_THE_SUBMITTED_ZIP",
+      "evidence": "The ZIP and MANIFEST.sha256 include .pytest_cache files, src/__pycache__/eit_geometry.cpython-313.pyc, and tests/__pycache__/test_core.cpython-313-pytest-9.0.2.pyc. This contradicts manuscript.tex line 263 and RESEARCH_LOG.md line 15."
+    },
+    {
+      "id": "C23",
+      "claim": "normalization_rescale_identity honors a nonzero source_index for arbitrary geometries.",
+      "class": "F",
+      "verdict": "CODE_BUG; reference cuboid results unaffected",
+      "evidence": "src/eit_geometry.py lines 123-127 computes d_nn using source_index but calls geometry_equilibrium without passing that source; geometry_equilibrium itself exposes no source_index and geometry_factor defaults to source 0."
+    },
+    {
+      "id": "C24",
+      "claim": "The package experimentally validates EIT/H-space or establishes new physics.",
+      "class": "F",
+      "verdict": "UNSUPPORTED_AND_EXPLICITLY_DISCLAIMED",
+      "evidence": "No affirmative claim remains. See README.md lines 54-58 and paper/manuscript.tex lines 243-260."
+    },
+    {
+      "id": "C25",
+      "claim": "The N=4 polygon minimum is universal across exponent pairs.",
+      "class": "B",
+      "verdict": "REJECTED_BY_INDEPENDENT_COUNTEREXAMPLE; package correctly limits the claim to (13,7)",
+      "evidence": "An independent N=3,...,100 scan for (n,m)=(12,6) gives its minimum at N=5, R=1.107351358136681, not N=4. paper/manuscript.tex lines 250-254 correctly identifies the reference-pair limitation."
+    },
+    {
+      "id": "C26",
+      "claim": "The five Platonic-solid geometry factors and radii are reproducible.",
+      "class": "B",
+      "verdict": "REPRODUCED",
+      "evidence": "Independent 80-digit Cartesian sums matched all tabulated values to displayed precision; maximum absolute radius discrepancy was about 5.4e-14, consistent with the constructors' 12-decimal coordinate rounding for icosahedron/dodecahedron."
+    }
+  ],
+  "nine_corrections": [
+    {"id": 1, "correction": "Normalization conventions reclassified as exact unit rescaling", "status": "CLOSED", "basis": "C15"},
+    {"id": 2, "correction": "Cuboid root reclassified as constrained radial equilibrium with vector residual", "status": "CLOSED", "basis": "C16-C18"},
+    {"id": 3, "correction": "Continuum-circle language replaced by nearest-neighbor-rescaled infinite-chain interpretation", "status": "CLOSED", "basis": "C11; add the curvature-weighting clarification for maximum precision"},
+    {"id": 4, "correction": "Analytic large-N zeta formula added", "status": "PARTIALLY_CLOSED", "basis": "C09-C10; reference formula is correct, but the general domain and code guard are missing"},
+    {"id": 5, "correction": "Co-spherical nearest-neighbor bound added", "status": "CLOSED", "basis": "C12-C13"},
+    {"id": 6, "correction": "Unsupported historical predeclaration claim removed", "status": "CLOSED", "basis": "manuscript.tex line 99 and REPRODUCIBILITY.md lines 35-37 now state the limitation explicitly"},
+    {"id": 7, "correction": "Builders added for all CSV/JSON/figures", "status": "CLOSED", "basis": "C20-C21"},
+    {"id": 8, "correction": "Build artifacts removed and P2-SMOOTH clarified out of scope", "status": "PARTIALLY_CLOSED", "basis": "P2-SMOOTH clarification is closed; artifact removal is false under C22"},
+    {"id": 9, "correction": "Licensing aligned as PolyForm Noncommercial code and CC BY-NC-SA paper/figures/docs", "status": "CLOSED_FOR_INTERNAL_CONSISTENCY", "basis": "README.md, LICENSE_CODE, LICENSE_PAPER, manuscript.tex, CITATION.cff, and .zenodo.json consistently describe mixed licensing"}
+  ],
+  "computational_reproduction": {
+    "archive_integrity": "ZIP CRC test passed",
+    "manifest": {"entries": 43, "all_hashes_matched": true},
+    "tests": {"passed": 9, "failed": 0},
+    "review_environment": {"python": "3.12.12", "numpy": "2.2.5", "matplotlib": "3.10.3", "mpmath": "1.3.0", "pytest": "9.2.0"},
+    "submitted_figure_environment_metadata": {"matplotlib": "3.10.8"},
+    "data_files_byte_identical": ["polygon_spectrum_N3_1000.csv", "platonic_geometry_spectrum.csv", "cuboid_normalization_sensitivity.csv", "cuboid_deformation_delta_0p2_5.csv", "summary_results.json"],
+    "figures_pixel_identical": ["figure_01_lj_reference.png", "figure_02_polygon_spectrum.png", "figure_03_platonic_spectrum.png", "figure_04_cuboid_deformation.png", "figure_05_research_architecture.png", "figure_06_normalization_sensitivity.png", "graphical_abstract.png"],
+    "standalone_experiments_reproduced": ["experiments/experiment_01_geometry_spectrum.py", "experiments/experiment_02_cuboid_deformation.py"]
+  },
+  "required_before_publication": [
+    "Restrict the zeta asymptotic and formula to n>m>2 (or derive separate regimes), and validate inputs in polygon_limit.",
+    "Qualify abstract/README/conclusion wording as the unique minimum within the computed N=3,...,1000 scan, unless a global proof is added.",
+    "Remove .pytest_cache and __pycache__ artifacts and regenerate MANIFEST.sha256.",
+    "Propagate source_index through geometry_equilibrium, normalization_rescale_identity, and spherical_nearest_bounds; add a non-vertex-transitive regression test.",
+    "Replace CITATION.cff:repository-code='REPLACE_WITH_GITHUB_URL' and recompute release metadata before deposition."
+  ],
+  "recommended_nonblocking": [
+    "State explicitly that the infinite-chain radial projections vanish asymptotically and the zeta(p-1) result is curvature-weighted.",
+    "Pin exact dependency versions if byte-identical PNG regeneration is required.",
+    "Include full license texts or have the notices reviewed for the intended distribution method.",
+    "Remove or cite the currently uncited Shannon bibliography entry.",
+    "Add high-precision tests for the limit, cuboid residual, and source-index handling."
+  ]
+}

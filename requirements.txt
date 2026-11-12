@@ -1,0 +1,5 @@
+# Exact pins used to build v0.1.2 (Python 3.13.5). Byte-identical PNGs require matplotlib 3.10.8.
+numpy==2.2.5
+matplotlib==3.10.8
+pytest==9.0.2
+mpmath==1.3.0

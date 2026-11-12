@@ -1,0 +1,18 @@
+[
+  {"claim":"R_EQ=(A/B)^(1/(n-m))","status":"analytically_derived"},
+  {"claim":"R_EQ=2^(1/6) for A/B=2,n=13,m=7","status":"analytically_derived"},
+  {"claim":"geometry radial root formula","status":"analytically_derived_with_declared_model"},
+  {"claim":"simplex cancellation","status":"analytically_derived_under_equal_normalized_distances"},
+  {"claim":"polygon minimum N=4","status":"numerically_reproduced_for_reference_13_7_only"},
+  {"claim":"polygon large-N zeta limit","status":"analytically_derived"},
+  {"claim":"large-N interpretation as infinite-chain limit","status":"derived_from_nearest_neighbor_rescaling"},
+  {"claim":"cuboid normalization difference","status":"exact_unit_rescaling_not_physical_non_equivalence"},
+  {"claim":"cuboid deformed radial root is full equilibrium","status":"false_corrected"},
+  {"claim":"cuboid tangential residual at radial minimum","status":"numerically_reproduced"},
+  {"claim":"co-spherical nearest-neighbor bound","status":"analytically_derived"},
+  {"claim":"1.3 reachable in co-spherical nearest-neighbor class","status":"ruled_out_for_reference_model"},
+  {"claim":"0.9 threshold","status":"heuristic_not_derived"},
+  {"claim":"1.3 threshold","status":"heuristic_not_derived"},
+  {"claim":"P2-SMOOTH a=b=2 is part of this package","status":"false_out_of_scope"},
+  {"claim":"new physics experimentally validated","status":"not_claimed_not_supported"}
+]

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this research package, please cite it using the metadata below."
+title: "Geometry-Dependent Equilibria in Generalized Lennard-Jones-Type Power-Law Systems"
+type: software
+authors:
+  - family-names: Mladenovski
+    given-names: Toni
+version: 0.1.2
+date-released: 2026-11-11
+repository-code: "https://github.com/eit-orbitos/EIT-LJ-Geometry"
+abstract: >-
+  Reproducible computational research package for geometry-dependent equilibrium
+  radii in a generalized inverse-power repulsive/stabilizing force model, including
+  polygon spectra, Platonic solids, controlled cuboid deformation, analytic large-N limits, rigorous geometry bounds, and boundary audits. Mixed licensing: code under PolyForm Noncommercial 1.0.0; manuscript/figures/documentation under CC BY-NC-SA 4.0.
+keywords:
+  - Lennard-Jones
+  - inverse-power potential
+  - geometry
+  - equilibrium
+  - computational mathematics
+  - reproducibility
