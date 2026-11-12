@@ -9,6 +9,9 @@ version: 0.1.2
 date-released: 2026-11-11
 repository-code: "https://github.com/eit-orbitos/EIT-LJ-Geometry"
 doi: 10.5281/zenodo.24149914
+license:
+  - PolyForm-Noncommercial-1.0.0
+  - CC-BY-NC-SA-4.0
 identifiers:
   - type: doi
     value: 10.5281/zenodo.24149914
@@ -27,3 +30,16 @@ keywords:
   - equilibrium
   - computational mathematics
   - reproducibility
+preferred-citation:
+  type: article
+  title: "Geometry-Dependent Equilibria in Generalized Lennard-Jones-Type Power-Law Systems"
+  authors:
+    - family-names: Mladenovski
+      given-names: Toni
+  year: 2026
+  version: 0.1.2
+  doi: 10.5281/zenodo.24149914
+  publisher:
+    name: Zenodo
+  url: "https://doi.org/10.5281/zenodo.24149914"
+  notes: "Preprint (theoretical/computational study), archived on Zenodo from GitHub release v0.1.2."

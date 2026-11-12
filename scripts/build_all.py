@@ -103,7 +103,6 @@ fig,ax=plt.subplots(figsize=(9,4.8)); ax.axis('off')
 boxes=[(0.03,0.62,0.2,0.22,'Analytic model\nF=A/r^n-B/r^m'),(0.29,0.62,0.2,0.22,'Geometry factor\nG_G(p)'),(0.55,0.62,0.2,0.22,'Radial equilibrium\nR_G'),(0.77,0.62,0.2,0.22,'Experiments\npolygon + cuboid'),(0.18,0.18,0.25,0.22,'Review corrections\nlimit, bounds, residual'),(0.57,0.18,0.25,0.22,'Provenance\n0.9/1.3 heuristic')]
 for x0,y0,w,h,t in boxes:
     ax.add_patch(plt.Rectangle((x0,y0),w,h,fill=False,linewidth=1.4)); ax.text(x0+w/2,y0+h/2,t,ha='center',va='center',fontsize=10)
-for a,b in [((.23,.73),(.29,.73)),((.49,.73),(.55,.73)),((.75,.73),(.77,.73)),((.67,.62),(.69,.4)),((.67,.4),(.69,.4))]: pass
 ax.set_title('Research architecture - v0.1.2 publication candidate'); fig.tight_layout(); fig.savefig(FIG/'figure_05_research_architecture.png',dpi=180); plt.close(fig)
 # 6 normalization identity (not sensitivity)
 sa=np.asarray(sens,float)

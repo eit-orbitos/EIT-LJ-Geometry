@@ -21,7 +21,7 @@ This version addresses the five required corrections of the independent Kimi AI 
 - `requirements.txt` pinned (Python 3.13.5, NumPy 2.2.5, Matplotlib 3.10.8, mpmath 1.3.0, pytest 9.0.2).
 
 ## Not changed (recommended, nonblocking, still open)
-- Uncited Shannon (1948) entry remains in the bibliography.
+- Uncited Shannon (1948) entry remains in the bibliography. *(Post-release note: removed on `main` after the v0.1.2 tag; see `CHANGELOG.md`. The tagged/archived v0.1.2 still contains it.)*
 - Full PolyForm / CC license texts not added (URL-based notices unchanged).
 - Separate asymptotics for `m<2` and `m=2` not derived.
 
